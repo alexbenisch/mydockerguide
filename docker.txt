@@ -1,0 +1,15 @@
+#How to build, create and run a container running nginx 
+
+#Clone official repo
+https://github.com/nginxinc/docker-nginx
+
+#Build image from Dockerfile 
+cd docker-nginx/stable/alpine 
+docker build -t alex/alpine-nginx . 
+
+#run container from image
+#detached -d / ports -p 80:80 intern:extern / -> image name
+docker run -d -p 80:80 alex/alpine-nginx
+
+#open shell in running container
+docker exec -it container_name  /bin/sh
